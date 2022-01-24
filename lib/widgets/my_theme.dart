@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyTheme {
+  static Color loginBtnCLr = Colors.purple;
+  static Color signUpBtnClr = Colors.grey.shade300;
+
   static ThemeData lightTheme(BuildContext context) => ThemeData(
         canvasColor: Colors.white,
         fontFamily: GoogleFonts.poppins().fontFamily,
