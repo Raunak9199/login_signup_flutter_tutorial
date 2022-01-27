@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MyTheme {
   static Color loginBtnCLr = Colors.purple;
   static Color signUpBtnClr = Colors.grey.shade300;
+  static Color loginPageBoxClr = const Color(0xFFccccFF);
 
   static ThemeData lightTheme(BuildContext context) => ThemeData(
         canvasColor: Colors.white,

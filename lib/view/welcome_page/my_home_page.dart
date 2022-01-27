@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:my_project_getx/view/login/login_page.dart';
 
 import 'package:my_project_getx/view/welcome_page/components/background.dart';
 import 'package:my_project_getx/view/welcome_page/components/custom_button.dart';
@@ -35,7 +37,7 @@ class MyHomePage extends StatelessWidget {
                   width: size.width * 0.7,
                 ),
                 CustomButton(
-                  btnClick: () {},
+                  btnClick: () => loginBtnHandler(context),
                   btnClr: MyTheme.loginBtnCLr,
                   btnText: 'LOGIN',
                   textClr: Theme.of(context).colorScheme.primary,
@@ -56,5 +58,12 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  // loginBtnHandler() {}
+  loginBtnHandler(BuildContext context) {
+    // Get.to(
+    //   () => const LoginPage(),
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => LoginPage()));
+    // );
+    print('login clicked');
+  }
 }

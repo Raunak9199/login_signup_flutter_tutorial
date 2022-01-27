@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
 
   final Color btnClr, textClr;
   final String btnText;
-  final Function btnClick;
+  final Function() btnClick;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       width: size.width * 0.8,
       child: ElevatedButton(
-        onPressed: () => btnClick,
+        onPressed: btnClick,
         child: Text(
           btnText,
           style: TextStyle(
