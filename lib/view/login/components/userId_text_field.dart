@@ -9,6 +9,7 @@ class UserIdTextField extends StatelessWidget {
     required this.userIdHintTextClr,
     required this.userIdTextFieldPrefixIcon,
     required this.onUserIdValueChanged,
+    // this.suffixIcon,
   }) : super(key: key);
 
   final TextEditingController userIdController;
@@ -17,6 +18,7 @@ class UserIdTextField extends StatelessWidget {
   final Color userIdHintTextClr;
   final IconData userIdTextFieldPrefixIcon;
   final Function onUserIdValueChanged;
+  // final IconData? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,10 @@ class UserIdTextField extends StatelessWidget {
           color: userIdHintTextClr,
         ),
         border: InputBorder.none,
+        // suffixIcon: Icon(
+        //   suffixIcon,
+        //   color: userIdHintTextClr,
+        // ),
         prefixIcon: Icon(
           userIdTextFieldPrefixIcon,
           color: userIdHintTextClr,
