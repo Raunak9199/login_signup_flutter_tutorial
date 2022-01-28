@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_project_getx/view/login/login_page.dart';
+import 'package:my_project_getx/view/sign_up/sign_up.dart';
 
 import 'package:my_project_getx/view/welcome_page/components/background.dart';
 import 'package:my_project_getx/view/welcome_page/components/custom_button.dart';
@@ -44,7 +45,14 @@ class MyHomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 CustomButton(
-                  btnClick: () {},
+                  btnClick: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SignUpPage(),
+                      ),
+                    );
+                  },
                   btnClr: MyTheme.signUpBtnClr,
                   btnText: 'SIGN UP',
                   textClr: Theme.of(context).colorScheme.secondary,
