@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:my_project_getx/controllers/signup_controller.dart';
 import 'package:my_project_getx/view/login/components/textfield_decorator.dart';
 import 'package:my_project_getx/view/login/components/userid_text_field.dart';
 import 'package:my_project_getx/view/login/login_page.dart';
@@ -14,6 +16,7 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SignUpController signUpController = Get.put(SignUpController());
     TextEditingController nameController = TextEditingController();
     final TextEditingController emailController = TextEditingController();
     final TextEditingController mobileController = TextEditingController();
@@ -43,7 +46,7 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const SignUpProfilePicture(),
+                  SignUpProfilePicture(),
                   const SizedBox(height: 20),
                   TextFieldDecorator(
                     child: UserIdTextField(
