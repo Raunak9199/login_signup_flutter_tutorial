@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:my_project_getx/view/login/login_page.dart';
 import 'package:my_project_getx/view/sign_up/sign_up.dart';
 
@@ -68,8 +67,8 @@ class MyHomePage extends StatelessWidget {
 
   loginBtnHandler(BuildContext context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => LoginPage()));
+        .push(MaterialPageRoute(builder: (context) => const LoginPage()));
     // );
-    print('login clicked');
+    debugPrint('login clicked');
   }
 }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_project_getx/view/login/components/textField_decorator.dart';
-import 'package:my_project_getx/view/login/components/userId_text_field.dart';
+import 'package:my_project_getx/view/login/components/textfield_decorator.dart';
+import 'package:my_project_getx/view/login/components/userid_text_field.dart';
 import 'package:my_project_getx/view/login/login_page.dart';
 import 'package:my_project_getx/view/sign_up/components/sign_up_background.dart';
 import 'package:my_project_getx/view/welcome_page/components/custom_button.dart';
 import 'package:my_project_getx/widgets/my_theme.dart';
 
+import 'components/gender_selection.dart';
 import 'components/signup_profile_picture.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -29,6 +30,7 @@ class SignUpPage extends StatelessWidget {
             // margin: const EdgeInsets.only(bottom: 10),
             alignment: Alignment.center,
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -93,6 +95,11 @@ class SignUpPage extends StatelessWidget {
                       onUserIdValueChanged: () {},
                     ),
                   ),
+                  //
+                  const TextFieldDecorator(
+                    child: GenderSelection(),
+                  ),
+                  //
                   CustomButton(
                     textClr: Colors.white,
                     btnText: 'Sign Up',

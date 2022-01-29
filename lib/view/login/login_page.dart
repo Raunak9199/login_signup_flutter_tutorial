@@ -5,8 +5,8 @@ import 'package:my_project_getx/view/sign_up/sign_up.dart';
 import 'package:my_project_getx/view/welcome_page/components/custom_button.dart';
 import 'package:my_project_getx/widgets/my_theme.dart';
 
-import 'components/textField_decorator.dart';
-import 'components/userId_text_field.dart';
+import 'components/textfield_decorator.dart';
+import 'components/userid_text_field.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -54,7 +54,7 @@ class LoginPage extends StatelessWidget {
                           userIdHintTextClr: userIdHintTextClr,
                           userIdTextFieldPrefixIcon: userIdTextFieldPrefixIcon,
                           onUserIdValueChanged: (value) {
-                            print(value);
+                            debugPrint(value);
                           },
                         ),
                       ),
@@ -66,7 +66,7 @@ class LoginPage extends StatelessWidget {
                             userPassHintTextClr: Colors.purple,
                             userPassTextFieldPrefixIcon: Icons.lock,
                             onUserPassValueChanged: (value) {
-                              print('pass vlalue $value');
+                              debugPrint('pass vlalue $value');
                             },
                             suffixIcon: suffixIcon),
                       ),

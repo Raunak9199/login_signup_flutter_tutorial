@@ -39,10 +39,6 @@ class UserIdTextField extends StatelessWidget {
           color: userIdHintTextClr,
         ),
         border: InputBorder.none,
-        // suffixIcon: Icon(
-        //   suffixIcon,
-        //   color: userIdHintTextClr,
-        // ),
         prefixIcon: Icon(
           userIdTextFieldPrefixIcon,
           color: userIdHintTextClr,

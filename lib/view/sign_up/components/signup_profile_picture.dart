@@ -10,21 +10,35 @@ class SignUpProfilePicture extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        const CircleAvatar(
-          backgroundImage: AssetImage("assets/images/img.png"),
-          // backgroundColor: Colors.,
+        CircleAvatar(
+          // backgroundImage: AssetImage("assets/images/img.png"),
+          child: const FlutterLogo(size: 100),
+          backgroundColor: Colors.purple.withOpacity(0.6),
           radius: 80,
         ),
         Positioned(
-          bottom: 0,
+          bottom: 5,
+          right: 20,
           child: InkWell(
             onTap: () {
-              print('Camera Clicked');
+              debugPrint('Camera Clicked');
             },
-            child: const Icon(
-              Icons.add_a_photo,
-              size: 28,
-              color: Colors.white,
+            child: Container(
+              decoration: const BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(3, 3),
+                    blurRadius: 20,
+                    spreadRadius: 2,
+                    color: Colors.black38,
+                  ),
+                ],
+              ),
+              child: const Icon(
+                Icons.add_a_photo,
+                size: 28,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
