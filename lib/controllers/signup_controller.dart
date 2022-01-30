@@ -86,13 +86,13 @@ class SignUpController extends GetxController {
     isLoading.value = true;
 
     Map<String, dynamic> databody = {
-      CustomWebServices.PROFILE_IMAGE = profileImageBase64,
-      CustomWebServices.USER_NAME = userName,
-      CustomWebServices.USER_EMAIL = userEmail,
-      CustomWebServices.USER_NUMBER = userMobile,
-      CustomWebServices.USER_PASS = userPass,
-      CustomWebServices.USER_GENDR = userGender,
-    } as Map<String, dynamic>;
+      CustomWebServices.PROFILE_IMAGE: profileImageBase64,
+      CustomWebServices.USER_NAME: userName,
+      CustomWebServices.USER_EMAIL: userEmail,
+      CustomWebServices.USER_NUMBER: userMobile,
+      CustomWebServices.USER_PASS: userPass,
+      CustomWebServices.USER_GENDR: userGender,
+    };
     var dataToSend = json.encode(databody);
 
     var response = await http.post(
@@ -105,7 +105,7 @@ class SignUpController extends GetxController {
 
       if (responseData['r_msg'] == "success") {
         //redirect to login page
-        Get.to(() => const LoginPage());
+        Get.to(() => LoginPage());
       } else if (responseData['r_msg'] == "failsed") {
         Get.snackbar(
           "Sign Up Failed",

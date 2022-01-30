@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_project_getx/controllers/gender_controller.dart';
 
+// ignore: must_be_immutable
 class GenderSelection extends StatelessWidget {
   GenderSelection({
     Key? key,

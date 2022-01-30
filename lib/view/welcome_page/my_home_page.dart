@@ -67,7 +67,7 @@ class MyHomePage extends StatelessWidget {
 
   loginBtnHandler(BuildContext context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const LoginPage()));
+        .push(MaterialPageRoute(builder: (context) => LoginPage()));
     // );
     debugPrint('login clicked');
   }

@@ -19,7 +19,7 @@ class SignUpProfilePicture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Stack(
       alignment: Alignment.center,
       children: [

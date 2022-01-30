@@ -1,5 +1,7 @@
 class CustomWebServices {
-  static String signUpApiUrl = "";
+  static String signUpApiUrl = "paste the api url to which data is to be sent";
+  static String loginApiUrl = "paste the api url to which data is to be sent";
+
   static String PROFILE_IMAGE = "userProfileImg";
   static String USER_NAME = "userName";
   static String USER_EMAIL = "userEmail";
