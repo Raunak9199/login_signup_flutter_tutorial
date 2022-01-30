@@ -3,14 +3,15 @@ import 'package:get/get.dart';
 import 'package:my_project_getx/controllers/gender_controller.dart';
 
 class GenderSelection extends StatelessWidget {
-  const GenderSelection({
+  GenderSelection({
     Key? key,
   }) : super(key: key);
 
+  // GenderSelectionController genderSelectionController =
+  //     Get.put(GenderSelectionController());
+  GenderSelectionController genderSelectionController = Get.find();
   @override
   Widget build(BuildContext context) {
-    GenderSelectionController genderSelectionController =
-        Get.put(GenderSelectionController());
     return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

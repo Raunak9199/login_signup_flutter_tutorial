@@ -3,39 +3,45 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+
 import 'package:my_project_getx/controllers/signup_controller.dart';
 
 class SignUpProfilePicture extends StatelessWidget {
   SignUpProfilePicture({
     Key? key,
+    // this.pickedFile,
   }) : super(key: key);
 
   final SignUpController _signUpController = Get.find();
 
   File? pickedFile;
-  ImagePicker imagePicker = ImagePicker();
+  final ImagePicker imagePicker = ImagePicker();
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Stack(
       alignment: Alignment.center,
       children: [
         Obx(
           () => ClipRRect(
-            child: CircleAvatar(
-              backgroundImage:
-                  _signUpController.isProfilePicPathSet.value == true
-                      ? FileImage(File(_signUpController.profilePicPath.value))
-                          as ImageProvider
-                      : const AssetImage("assets/images/img.png"),
-              // child: const FlutterLogo(size: 100),
-              backgroundColor: Colors.purple.withOpacity(0.6),
-              radius: 80,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 50),
+              child: CircleAvatar(
+                backgroundImage: _signUpController.isProfilePicPathSet.value ==
+                        true
+                    ? FileImage(File(_signUpController.profilePicPath.value))
+                        as ImageProvider
+                    : const AssetImage("assets/images/img.png"),
+                backgroundColor: Colors.purple.withOpacity(0.6),
+                radius: 80,
+              ),
             ),
           ),
         ),
         Positioned(
           bottom: 5,
-          right: 20,
+          right: 60,
           child: InkWell(
             onTap: () {
               // debugPrint('Camera Clicked');
@@ -80,6 +86,10 @@ class SignUpProfilePicture extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  FileImage profilePic() {
+    return FileImage(File(_signUpController.profilePicPath.value));
   }
 
   Widget buildBottomSheet(BuildContext context) {

@@ -23,6 +23,7 @@ class UserPassTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textInputAction: TextInputAction.next,
       controller: userPassController,
       validator: (value) {
         if (value!.isEmpty) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UserIdTextField extends StatelessWidget {
-  const UserIdTextField({
+class UserMobileTextField extends StatelessWidget {
+  const UserMobileTextField({
     Key? key,
     required this.userIdController,
     required this.userIdErrorText,
@@ -23,8 +23,11 @@ class UserIdTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLength: 10,
+      keyboardType: TextInputType.number,
+      textInputAction: TextInputAction.next,
       controller: userIdController,
-      validator: (String? value) {
+      validator: (value) {
         if (value!.isEmpty) {
           return userIdErrorText;
         }
@@ -38,6 +41,7 @@ class UserIdTextField extends StatelessWidget {
         hintStyle: TextStyle(
           color: userIdHintTextClr,
         ),
+        counterText: "",
         border: InputBorder.none,
         prefixIcon: Icon(
           userIdTextFieldPrefixIcon,
