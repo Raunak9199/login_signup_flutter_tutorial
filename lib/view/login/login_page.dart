@@ -79,13 +79,17 @@ class LoginPage extends StatelessWidget {
                           suffixIcon: suffixIcon,
                         ),
                       ),
-                      CustomButton(
-                        textClr: Colors.white,
-                        btnText: 'LOGIN',
-                        btnClick: () {
-                          userLogin();
-                        },
-                        btnClr: MyTheme.loginBtnCLr,
+                      Obx(
+                        () => _loginController.isDataSubmitting.value
+                            ? const CircularProgressIndicator()
+                            : CustomButton(
+                                textClr: Colors.white,
+                                btnText: 'LOGIN',
+                                btnClick: () {
+                                  userLogin();
+                                },
+                                btnClr: MyTheme.loginBtnCLr,
+                              ),
                       ),
                     ],
                   ),
